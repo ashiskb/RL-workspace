@@ -29,6 +29,7 @@ while True:
 
 print('Episode terminated in {} steps\nTotal rewards accumulated = {}'.format(total_steps,total_reward))
 
+env.close()
 #On average, this random agent takes 12 to 15 steps before the pole falls and the episode ends
 #Most of the environments in Gym have a `reward boundary`, which is the average reward that the agent should gain during 100 consecutive eposides to solve the environment.
 #For cartpole, the boundary is 195. That means, on average, the agent must hold the stick for 195 time steps or longer.

@@ -26,7 +26,3 @@ It is expected that you follow the order below inspecting the codebase:
 * `pip install -r requirements.txt` (the file is given)
 * Make sure you have `gym==0.26.1` installed. And verify `print(gym.__version__)` returns `0.26.1`.
 
-
-
-                   
-                   r

@@ -6,11 +6,12 @@
 import gym
 from tqdm import tqdm
 
-#number of timestepts
+#number of timesteps
 n = 500
 
 #Since we pass render_mode="human", you should see a window pop up rendering the environment.
 env = gym.make("LunarLander-v2", render_mode="human")
+
 env.action_space.seed(42)
 
 observation, info = env.reset(seed=42)

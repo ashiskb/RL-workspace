@@ -19,6 +19,8 @@ env = gym.make("CartPole-v0")
 ## ii) the pole's speed
 ## iii) the pole's angle to the cart/platform. the pole angle in radians (1 radian = 57.295 degrees)
 ## iv) the pole's rotation rate
+
+
 obs,info = env.reset()
 print('obs = {}'.format(obs))
 #Example printout:

@@ -1,0 +1,14 @@
+Do you want to train the agent?  [y/N] [H[2J[H[2Jstate = 0
+=================
+Episode  0
+=================
+printed episode.
+action = 0
+next_state = 0, reward = 0.0, done = False
+printing q_table:
+Step 1 : Explore (Left)
+-----------------
+|   | [34m [0m | [34m [0m | [34m [0m |
+-----------------
+|   | [34m [0m | [34m [0m | [34m [0m |
+-----------------

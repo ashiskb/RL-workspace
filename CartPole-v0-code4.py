@@ -3,6 +3,7 @@
 #as the the interpreter listed on the first line will be invoked. Good luck!
 #$ chmod +x CartPole-v0-code4.py
 #$ ./CartPole-v0-code4.py
+# References adopted: https://deepnote.com/@ken-e7bd/Intro-to-Q-learning-in-RL-e11e39d2-cebf-4552-8920-2db18aab3bd6
 import gym
 import math
 import imageio.v2 as imageio
@@ -11,8 +12,6 @@ import numpy as np
 from tqdm import tqdm
 import matplotlib.pyplot as plt
 from joblib import load, dump
-
-
 
 #The CartPole-v0 environment with a learning agent
 # Goal is to control the cart (i.e., platform) with a pole attached by its bottom prt.
@@ -186,7 +185,7 @@ def Q_learning(env, num_episodes, gamma=0.98):
 
 
 if __name__=='__main__':
-    verbose = True
+    verbose = False
     do_training = False
     do_test = True
     do_debug = False
@@ -202,7 +201,7 @@ if __name__=='__main__':
         env = gym.make('CartPole-v0',render_mode='rgb_array')
 
         # How long do we want the agent to explore and learn?
-        num_episodes = 100      
+        num_episodes = 1000      
 
         # Let us use Q-learning to learn best policy
         Q_table, total_reward = Q_learning(env, num_episodes)
