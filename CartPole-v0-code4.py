@@ -252,19 +252,20 @@ if __name__=='__main__':
         state,info = env.reset()
         # Don't forget to discretize the state_space the same way you did to train the agent
         state = discretize_state(state, env)
-
+        episode = 1
+        step = 0
         # Run for maximum of max_episode_length steps which is the limit of the game
-        for step in tqdm(range(max_episode_length)):
+        for i in tqdm(range(max_episode_length)):
 
             # Plot the previous state and save it as an image that 
             # will be later patched together sa a .gif
             img = plt.imshow(env.render())
 
-            plt.title("Step: {}".format(step))
+            plt.title("Episode: {}, Step: {}".format(episode,step))
             plt.axis('off')
-            plt.savefig("./temp/{}.png".format(step))
+            plt.savefig("./temp/{}.png".format(i))
             plt.close()
-            filenames.append("./temp/{}.png".format(step))
+            filenames.append("./temp/{}.png".format(i))
             
             # Here we set the exploration rate to 0.0 as we want to avoid any random exploration.
             # That is, we want the agent fully depends on its learned policy (+Q_table)
@@ -276,6 +277,7 @@ if __name__=='__main__':
 
             #Apply the next step
             new_state, reward, done, _ , _ = env.step(action)
+            step += 1
             #Don't forget to discretize new_state
             new_state = discretize_state(new_state, env)
             state = new_state
@@ -287,12 +289,16 @@ if __name__=='__main__':
             # only the agent is done before the set max_episode_length steps.
             # If your agent was trained well, who knows, the following would never happen! Haha
             if done:
+                episode += 1
+                step = 0
                 print(f'Test episode finished at step {step+1} with a total reward of: {episode_reward}')
                 print(f'We moved {right} times right and {left} times left')
-                break
+                state,info = env.reset()
+                state = discretize_state(state, env)
+                #break
                 
         # Stitch the images together to produce a .gif
-        with imageio.get_writer('./video/test.gif', mode='I') as writer:
+        with imageio.get_writer('./video/CartPole-v0-QLearning.gif', mode='I') as writer:
             for filename in filenames:
                 image = imageio.imread(filename)
                 writer.append_data(image)
