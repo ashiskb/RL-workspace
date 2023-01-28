@@ -1,8 +1,8 @@
 #!/Users/ashis/venv-directory/venv-ml-p3.10/bin/python3.10
 #Please make this python file executable and then run it without passing it to python interpreter
 #as the the interpreter listed on the first line will be invoked. Good luck!
-#$ chmod +x Blackjack-v1-code1.py
-#$ ./Blackjack-v1-code1.py
+#$ chmod +x CarRacing-v2-code1.py
+#$ ./CarRacing-v2-code1.py
 import gym
 import math
 import imageio.v2 as imageio
@@ -12,12 +12,12 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 from joblib import load, dump
 
-#number of timestepts
+#number of timesteps
 n = 500
 
 #Since we pass render_mode="human", you should see a window pop up rendering the environment.
 render_mode = 'rgb_array' #or, 'human'
-env = gym.make("Blackjack-v1", render_mode=render_mode)
+env = gym.make("CarRacing-v2", render_mode=render_mode)
 # Initialize empty buffer for the images that will be stiched to a gif
 # Create a temp directory
 filenames = []
@@ -36,6 +36,7 @@ step=0
 
 
 for i in tqdm(range(n)):
+
     # Plot the previous state and save it as an image that 
     # will be later patched together sa a .gif
     img = plt.imshow(env.render())
@@ -55,8 +56,9 @@ for i in tqdm(range(n)):
         step = 0
         observation, info = env.reset()
         #break
+
 # Stitch the images together to produce a .gif
-with imageio.get_writer('./video/Blackjack-v1-random.gif', mode='I') as writer:
+with imageio.get_writer('./video/CarRacing-v2-random.gif', mode='I') as writer:
     for filename in filenames:
         image = imageio.imread(filename)
         writer.append_data(image)

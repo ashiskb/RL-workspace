@@ -1,9 +1,8 @@
 #!/Users/ashis/venv-directory/venv-ml-p3.10/bin/python3.10
 #Please make this python file executable and then run it without passing it to python interpreter
 #as the the interpreter listed on the first line will be invoked. Good luck!
-#$ chmod +x ALE-Breakout-v5_code1.py
-#$ ./ALE-Breakout-v5_code1.py
-
+#$ chmod +x Blackjack-v1-code1.py
+#$ ./Blackjack-v1-code1.py
 import gym
 import math
 import imageio.v2 as imageio
@@ -13,13 +12,12 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 from joblib import load, dump
 
-#number of timestepts
+#number of timesteps
 n = 500
 
 #Since we pass render_mode="human", you should see a window pop up rendering the environment.
 render_mode = 'rgb_array' #or, 'human'
-env = gym.make("ALE/Breakout-v5", render_mode=render_mode)
-
+env = gym.make("Blackjack-v1", render_mode=render_mode)
 # Initialize empty buffer for the images that will be stiched to a gif
 # Create a temp directory
 filenames = []
@@ -36,6 +34,7 @@ observation, info = env.reset(seed=42)
 episode=1
 step=0
 
+
 for i in tqdm(range(n)):
     # Plot the previous state and save it as an image that 
     # will be later patched together sa a .gif
@@ -51,15 +50,13 @@ for i in tqdm(range(n)):
     action = env.action_space.sample()
     observation, reward, terminated, truncated, info = env.step(action)
     step += 1
-
     if terminated or truncated:
         episode += 1
         step = 0
         observation, info = env.reset()
         #break
-
 # Stitch the images together to produce a .gif
-with imageio.get_writer('./video/ALE-Breakout-v5-random.gif', mode='I') as writer:
+with imageio.get_writer('./video/Blackjack-v1-random.gif', mode='I') as writer:
     for filename in filenames:
         image = imageio.imread(filename)
         writer.append_data(image)
@@ -68,4 +65,7 @@ with imageio.get_writer('./video/ALE-Breakout-v5-random.gif', mode='I') as write
 for f in filenames:
     os.remove(f)
 
+
 env.close()
+
+
