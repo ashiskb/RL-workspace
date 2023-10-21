@@ -39,7 +39,7 @@ imageio-ffmpeg==0.4.7
 importlib-resources==5.9.0
 iniconfig==1.1.1
 ipykernel==6.16.0
-ipython==8.5.0
+ipython
 ipython-genutils==0.2.0
 jedi==0.18.1
 Jinja2==3.1.2
@@ -62,7 +62,7 @@ lockfile==0.12.2
 lxml==4.9.1
 lz4==4.0.2
 MarkupSafe==2.1.1
-matplotlib==3.6.0
+matplotlib
 matplotlib-inline==0.1.6
 mistune==2.0.4
 moviepy==1.0.3
@@ -75,10 +75,10 @@ nbformat==5.6.1
 nest-asyncio==1.5.5
 notebook==6.4.12
 notebook-shim==0.1.0
-numpy==1.23.3
+numpy
 opencv-python==4.6.0.66
 packaging==21.3
-pandas==1.5.0
+pandas
 pandocfilters==1.5.0
 parso==0.8.3
 pexpect==4.8.0
@@ -107,7 +107,7 @@ PyYAML==6.0
 pyzmq==24.0.1
 requests==2.28.1
 rise==5.7.1
-scipy==1.9.1
+scipy
 seaborn==0.12.0
 Send2Trash==1.8.0
 six==1.16.0
