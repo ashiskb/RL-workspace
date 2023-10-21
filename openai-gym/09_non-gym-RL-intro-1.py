@@ -1,4 +1,4 @@
-#!/Users/ashis/venv-directory/venv-ml-p3.10/bin/python3.10
+#!/Users/ashis/venv-directory/venv-p310-RL-workspace/bin/python
 # coding: utf-8
 
 # # Non-gym environment

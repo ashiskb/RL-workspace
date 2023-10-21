@@ -21,8 +21,14 @@ It is expected that you follow the order below inspecting the codebase:
 * list_all_envs_registry.py :
 
 
-## Requirements
+## Requirements (as of 10/20/2023)
 * Python 3.10.x
+* (**MacOS** specific dependency!) Install package `swig` with `brew install swig` in case your `gymnasium` install throws error like `Failed building wheel for box2d-py`.
+* Here are few `pip` commands you might be interested to run if got hiccups multiple times with the `requirements.txt`
+  * Installing the package `gymnasium` with all its dependencies, plus all ROM license to create Atari game environments: `pip install "gymnasium[all,accept-rom-license]"`
+  * `pip install tqdm`
+  * `pip install joblib`
+  * `pip install termcolor`
 * `pip install -r requirements.txt` (the file is given)
-* Make sure you have `gym==0.26.1` installed. And verify `print(gym.__version__)` returns `0.26.1`.
+* Make sure you have `gymnasium==0.29.1` installed. And verify `print(gymnasium.__version__)` returns `0.29.1`.
 

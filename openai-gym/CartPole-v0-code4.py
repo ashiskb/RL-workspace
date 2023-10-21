@@ -1,10 +1,11 @@
-#!/Users/ashis/venv-directory/venv-ml-p3.10/bin/python3.10
+#!/Users/ashis/venv-directory/venv-p310-RL-workspace/bin/python
 #Please make this python file executable and then run it without passing it to python interpreter
 #as the the interpreter listed on the first line will be invoked. Good luck!
 #$ chmod +x CartPole-v0-code4.py
 #$ ./CartPole-v0-code4.py
+#Or, simply run with `python` interpreter.
 # References adopted: https://deepnote.com/@ken-e7bd/Intro-to-Q-learning-in-RL-e11e39d2-cebf-4552-8920-2db18aab3bd6
-import gym
+import gymnasium as gym
 import math
 import imageio.v2 as imageio
 import os

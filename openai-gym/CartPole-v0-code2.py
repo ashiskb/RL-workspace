@@ -1,9 +1,11 @@
-#!/Users/ashis/venv-directory/venv-ml-p3.10/bin/python3.10
+#!/Users/ashis/venv-directory/venv-p310-RL-workspace/bin/python
 #Please make this python file executable and then run it without passing it to python interpreter
 #as the the interpreter listed on the first line will be invoked. Good luck!
 #$ chmod +x CartPole-v0-code2.py
 #$ ./CartPole-v0-code2.py
-import gym
+# Or, simply run with `python` interpreter under the venv
+
+import gymnasium as gym
 from tqdm import tqdm
 
 
